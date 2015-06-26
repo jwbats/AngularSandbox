@@ -1,6 +1,6 @@
 ﻿(function(){
 
-	var app = angular.module("SandboxApp", []);
+	var app = angular.module("SandboxApp", ["person-directives"]);
 
 	app.controller("MathCntrl", function($scope){
 		$scope.A = 5;
