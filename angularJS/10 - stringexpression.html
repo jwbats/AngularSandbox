@@ -1,0 +1,75 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="SampleApp" ng-controller="SampleCntrl">
+        <strong>Example 1:</strong>
+        <br />
+        In this example we will concatenate two strings using expression <strong>{{ <em>firstName</em>
+            }} {{ <em>lastName</em> }}</strong>. If the value in the input controls change
+        then the value in the expression will be updated automatically.
+        <br />
+        <br />
+        <table>
+            <tr>
+                <td>
+                    Enter First Name :
+                </td>
+                <td>
+                    <input type="text" ng-model="firstName" /><br />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Enter Last Name :
+                </td>
+                <td>
+                    <input type="text" ng-model="lastName" /><br />
+                </td>
+            </tr>
+        </table>
+        <br />
+        <p>Hello {{ firstName }} {{ lastName }}</p>
+        <p ng-bind="greetings()"></p>
+        <br />
+        <hr />
+        <strong>Example 2:</strong>
+        <br />
+        In this example we will calculate the length of the string using expression <strong>
+            {{ <em>fullName.length</em> }}</strong>.
+        <br />
+        <br />
+        Enter your name :
+        <input type="text" ng-model="fullName" /><br />
+        <br />
+        length of your name is : {{fullName.length}}
+        <hr />
+        <strong>Example 3:</strong>
+        <br />
+        In this example we will covnert the input string to Lowercase & Uppercase using
+        expression <strong>{{ <em>inputname1 | lowercase</em> }} && {{ <em>inputname1 | uppercase</em>
+            }}</strong>.
+        <br />
+        <br />
+        Enter name :<input type="text" ng-model="inputname1" />
+        <br />
+        <br />
+        Lowercase : {{ inputname1 | lowercase }}<br />
+        Uppercase : {{ inputname1 | uppercase }}
+    </div>
+    <script>
+        var myapp = angular.module("SampleApp", []);
+        myapp.controller("SampleCntrl", function ($scope) {
+            $scope.firstName = "Dotnet";
+            $scope.lastName = "Learners";
+            $scope.fullName = "Dotnet Learners";
+            $scope.inputname1 = "Dotnet Learners";
+            $scope.greetings = function(){
+                return "Hey, " + this.firstName + " " + this.lastName;
+            };
+        });
+    </script>
+</body>
+</html>

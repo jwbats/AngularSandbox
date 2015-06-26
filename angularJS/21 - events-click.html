@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="SampleApp" ng-controller="SampleCntrl">
+        <ul class="exmpul">
+            <li><strong>ng-click example:</strong>
+                <br />
+                Click the below button to Show/Hide the div and change the button text.
+                <br />
+                <br />
+                <input type="button" ng-click="toggledisplay();" value="{{btntext}}" />
+                <br />
+                <br />
+                <div style="background: green; color: White; font-size: 20px; font-weight: bold;
+                    padding: 10px;" ng-show="divdisp">
+                    AngularJS Tutorial - Click event example.
+                </div>
+                <br />
+            </li>
+            <li><strong>ng-dblclick example:</strong>
+                <br />
+                Double click the below button to Show/Hide the div and change the button text.
+                <br />
+                <br />
+                <input type="button" ng-dblclick="toggledbldisplay();" value="{{btndbltext}}" />
+                <br />
+                <br />
+                <div style="background: green; color: White; font-size: 20px; font-weight: bold;
+                    padding: 10px;" ng-show="divdbldisp">
+                    AngularJS Tutorial- Double click event example.
+                </div>
+            </li>
+        </ul>
+    </div>
+    <script>
+        var myapp = angular.module("SampleApp", []);
+        myapp.controller("SampleCntrl", function ($scope) {
+            $scope.btntext = "Hide";
+            $scope.btndbltext = "Hide";
+            $scope.divdisp = true;
+            $scope.divdbldisp = true;
+            $scope.toggledisplay = function () {
+                if ($scope.btntext == "Hide") {
+                    $scope.btntext = "Show";
+                    $scope.divdisp = false;
+                }
+                else {
+                    $scope.btntext = "Hide";
+                    $scope.divdisp = true;
+                }
+            };
+
+            $scope.toggledbldisplay = function () {
+                if ($scope.btndbltext == "Hide") {
+                    $scope.btndbltext = "Show";
+                    $scope.divdbldisp = false;
+                }
+                else {
+                    $scope.btndbltext = "Hide";
+                    $scope.divdbldisp = true;
+                }
+            };
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="SampleApp" ng-controller="SampleCntrl">
+        <ul>
+            Countries List
+            <li ng-repeat="country in countries">{{ country.CountryName }} </li>
+        </ul>
+    </div>
+    <script>
+        var myapp = angular.module("SampleApp", []);
+        myapp.controller("SampleCntrl", function ($scope) {
+            $scope.countries = [
+                { CountryName: "USA" },
+                { CountryName: "UK" },
+                { CountryName: "England" },
+                { CountryName: "India" },
+                { CountryName: "Australia"}
+            ];
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="SampleApp" ng-controller="SampleCntrl">
+        <div style="width: 150px; height: 150px; color: White; background: green; font-weight: bold;
+            font-size: 20px; padding: 20px;" ng-bind="hovertext" ng-mouseover="mousehoverevt()">
+        </div>
+        <br />
+        Different mouse events like mouse enter, mouse leave, mouse move, mouse down and
+        mouse move. Place the mouse on the below div and perform each event to see how it
+        will work.
+        <div style="width: 200px; height: 200px; color: White; background: red; font-weight: bold;
+            font-size: 20px; padding: 20px;" ng-bind="eventtext" ng-mouseenter="mouseenterevt()"
+            ng-mousemove="mousemoveevt()" ng-mouseleave="mouseleaveevt()" ng-mousedown="mousedownevt()"
+            ng-mouseup="mouseupevt()">
+        </div>
+    </div>
+    <script>
+        var myapp = angular.module("SampleApp", []);
+        myapp.controller("SampleCntrl", function ($scope) {
+            $scope.hovertext = "Hover the cursor to fire mouse over event.";
+            $scope.eventtext = "Place the cursor to fire mouse enter event.";
+            $scope.mousehoverevt = function () {
+                $scope.hovertext = "Mouse over event fired.";
+            };
+            $scope.mouseenterevt = function () {
+                $scope.eventtext = "Mouse enter event fired.";
+            };
+            $scope.mousemoveevt = function () {
+                $scope.eventtext = "Mouse move event fired.";
+            };
+            $scope.mouseleaveevt = function () {
+                $scope.eventtext = "Mouse leave event fired.";
+            };
+            $scope.mousedownevt = function () {
+                $scope.eventtext = "Mouse down event fired.";
+            };
+            $scope.mouseupevt = function () {
+                $scope.eventtext = "Mouse up event fired.";
+            };
+        });
+    </script>
+</body>
+</html>

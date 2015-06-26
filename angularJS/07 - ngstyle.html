@@ -1,0 +1,42 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="SampleApp" ng-controller="SampleCntrl">
+        <input id="chbbg" type="checkbox" ng-model="bgcolor" ng-change="setstyle();" /><label
+            for="chbbg">Set background color green</label>
+        <br />
+        <input id="chbcolor" type="checkbox" ng-model="fontcolor" ng-change="setstyle();" /><label
+            for="chbcolor">Set color white</label>
+        <br />
+        <input id="chbfontwt" type="checkbox" ng-model="fontbold" ng-change="setstyle();" /><label
+            for="chbfontwt">Set font weight bold</label>
+        <br />
+        <input id="chbpad" type="checkbox" ng-model="padding" ng-change="setstyle();" /><label
+            for="chbpad">Set Padding</label>
+        <br />
+        <p ng-style="customestyle">
+            Select the above option to change this paragraph styles.</p>
+    </div>
+    <script>
+        var myapp = angular.module("SampleApp", []);
+        myapp.controller("SampleCntrl", function ($scope) {
+            $scope.bgcolor = true;
+            $scope.fontcolor = true;
+            $scope.fontbold = true;
+            $scope.padding = true;
+            $scope.setstyle = function () {
+                $scope.customestyle = {
+                    "background-color": $scope.bgcolor ? "green" : "",
+                    "color": $scope.fontcolor ? "#fff" : "",
+                    "font-weight": $scope.fontbold ? "bold" : "",
+                    "padding": $scope.padding ? "10px" : ""
+                };
+            };
+            $scope.setstyle();
+        });
+    </script>
+</body>
+</html>

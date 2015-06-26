@@ -1,0 +1,90 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="SampleApp" ng-controller="SampleCntrl">
+        <strong>Example 1:</strong>
+        <br />
+        In this example we will bind A, B to input fields using ng-model, and write
+        the expression for total price as <strong>{{ <em>A * B</em> }}</strong>.
+        If the value in the input controls change then the value in the expression will
+        be updated automatically.
+        <br />
+        <br />
+        <table>
+            <tr>
+                <td>
+                    A:
+                </td>
+                <td>
+                    <input type="text" ng-model="A" /><br />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    B:
+                </td>
+                <td>
+                    <input type="text" ng-model="B" /><br />
+                </td>
+            </tr>
+        </table>
+        <br />
+        A: {{A}}<br />
+        B: {{B}}<br />
+        A * B: {{A * B}}<br />
+        <hr />
+        <strong>Example 2:</strong>
+        <br />
+        In this example we will calculate the Percentage of amount for a given amount and
+        percentage using expression <strong>{{ <em>amount * percent / 100</em> }}</strong>.
+        <br />
+        <br />
+        <table>
+            <tr>
+                <td>
+                    Amount:
+                </td>
+                <td>
+                    <input type="text" ng-model="amount" /><br />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Percent:
+                </td>
+                <td>
+                    <input type="text" ng-model="percent" /><br />
+                </td>
+            </tr>
+        </table>
+        <br />
+        {{percent}}% of {{amount}} is : {{amount * percent / 100}}
+        <hr />
+        <strong>Example 3:</strong>
+        <br />
+        In this example we will calculate the Square root of a given number. by default
+        Math function is not avialable in $scope object, for that we will define the Math
+        function in $scope object as <strong>$scope.Math = window.Math; </strong>and write
+        the expression for square root as <strong>{{ <em>Math.sqrt(inputval)</em> }}</strong>.
+        <br />
+        <br />
+        Enter Number :<input type="text" ng-model="inputvalue" /><br />
+        <br />
+        Square root of {{inputvalue}} is : {{ Math.sqrt(inputvalue) }}
+    </div>
+    <script>
+        var myapp = angular.module("SampleApp", []);
+        myapp.controller("SampleCntrl", function ($scope) {
+            $scope.Qty = 5;
+            $scope.UnitPrice = 6;
+            $scope.inputval = 9;
+            $scope.Math = window.Math;
+            $scope.inputamt = 62.50;
+            $scope.inputpercent = 14;
+        });
+    </script>
+</body>
+</html>

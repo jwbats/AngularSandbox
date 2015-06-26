@@ -1,0 +1,86 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+        .greenbg
+        {
+            background: green;
+        }
+        .bluebg
+        {
+            background: blue;
+        }
+        .yellowbg
+        {
+            background: yellow;
+        }
+        .red
+        {
+            color: red;
+        }
+        .white
+        {
+            color: white;
+        }
+        .padding10
+        {
+            padding: 10px;
+        }
+        .padding20
+        {
+            padding: 20px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="SampleApp" ng-controller="SampleCntrl">
+        <strong>Example-1:</strong><br />
+        <br />
+        Enter class names with spaces :
+        <input type="text" ng-model="customstyle1" style="width: 200px" />
+        <p ng-class="customstyle1">
+            Class names entered in the textbox are applied.
+        </p>
+        <strong>Example-2:</strong><br />
+        <br />
+        <label>
+            <input type="checkbox" ng-model="cbgreen" />Green background
+        </label>
+        <br />
+        <label>
+            <input type="checkbox" ng-model="cbwhite" />White color
+        </label>
+        <br />
+        <label>
+            <input type="checkbox" ng-model="cbpadding" />Add 20px padding
+        </label>
+        <br />
+        <p ng-class="{greenbg:cbgreen, white:cbwhite, padding20:cbpadding }">
+            Select the checkbox to apply CSS classes.
+        </p>
+        <strong>Example-3:</strong><br />
+        Enter class names with spaces :
+        <input type="text" ng-model="customstyle2" style="width: 200px" />
+        <br />
+        <label>
+            <input type="checkbox" ng-model="cbblue" />Blue background
+        </label>
+        <br />
+        <p ng-class="[customstyle2, {bluebg: cbblue}]">
+            Apply CSS classes dynamically.
+        </p>
+    </div>
+    <script>
+        var myapp = angular.module("SampleApp", []);
+        myapp.controller("SampleCntrl", function ($scope) {
+            $scope.customstyle1 = "yellowbg red padding10";
+            $scope.cbgreen = true;
+            $scope.cbwhite = true;
+            $scope.cbpadding = true;
+            $scope.customstyle2 = "padding10";
+            $scope.cbblue = true;
+        });
+    </script>
+</body>
+</html>

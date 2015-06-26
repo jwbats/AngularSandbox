@@ -1,0 +1,22 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+    <script>
+        var myapp = angular.module("JaysApp", []);
+        myapp.controller("AdditionCntrl", function ($scope) {
+            $scope.A = 10;
+            $scope.B = 6;
+        });
+    </script>
+</head>
+<body>
+
+    <div ng-app="JaysApp" ng-controller="AdditionCntrl">
+        A : {{A}}<br />
+        B : {{B}}<br />
+        A * B : {{A * B}}<br />
+    </div>
+
+</body>
+</html>

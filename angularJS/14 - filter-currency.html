@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+        .exmpul span
+        {
+            padding: 5px;
+            display: block;
+            background: #ccc;
+            margin: 10px 10px 20px 10px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="SampleApp" ng-controller="SampleCntrl">
+        <ul class="exmpul">
+            <li>Input amount :
+                <input type="text" ng-model="inputnumber" />
+        </ul>
+        <ul class="exmpul">
+            <li>Default currency filter, if we have not given any currency format by default it
+                will consider it as $ -> <strong>{{ <em>inputnumber | currency</em> }}</strong>
+                <br />
+                <span>{{ inputnumber | currency }}</span> </li>
+        </ul>
+        <ul class="exmpul">
+            <li>For indian rupees with no fractions : -> <strong>{{ <em>inputnumber | currency:
+                '&amp;#8377' : 0</em> }}</strong>
+                <br />
+                <span>{{ inputnumber | currency : '&#8377' : 0}}</span> </li>
+        </ul>
+        <ul class="exmpul">
+            <li>For Euro with fractions :
+                <input type="text" ng-model="inputfractions" />
+                <br />
+                <strong>{{ <em>inputnumber | currency: '&amp;#8364' : inputfractions</em> }}</strong>
+                <br />
+                <span>{{ inputnumber | currency : '&#8364' : inputfractions}}</span> </li>
+        </ul>
+    </div>
+    <script>
+        var myapp = angular.module("SampleApp", []);
+        myapp.controller("SampleCntrl", function ($scope) {
+            $scope.inputnumber = 48643589.456542;
+            $scope.inputfractions = 3;
+        });
+    </script>
+</body>
+</html>

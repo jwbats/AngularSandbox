@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+        .exmpul li
+        {
+            padding-bottom: 10px;
+        }
+        .exmpul span
+        {
+            padding: 5px;
+            display: block;
+            background: #ccc;
+            margin: 10px 10px 20px 10px;
+        }
+        .tblstudents
+        {
+            border-collapse: collapse;
+            border: solid 1px #ccc;
+        }
+        .tblstudents th, .tblstudents td
+        {
+            border: solid 1px #ccc;
+            padding: 5px;
+        }
+        .tblstudents th
+        {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .sortclass
+        {
+            color: Blue;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="SampleApp" ng-controller="SampleCntrl">
+        <ul class="exmpul">
+            <li>Input Array= <strong>[10,8,6,4,9,2]</strong> </li>
+            <li>Array in ascending order -> -> <strong>{{ <em>intary | orderBy : '' </em>}}</strong>
+                <br />
+                <span>{{ intary | orderBy : '' }}</span> </li>
+            <li>Array in descending order -> -> <strong>{{ <em>intary | orderBy : '' : true </em>
+                }}</strong>
+                <br />
+                <span>{{ intary | orderBy : '' :true }}</span> </li>
+            <li>Student List= [<br />
+                { Name: "James", Marks: "980", Grade : "A" },<br />
+                { Name: "Steave", Marks: "863", Grade: "B" },<br />
+                { Name: "Mark", Marks: "695", Grade: "D" },<br />
+                { Name: "Smith", Marks: "776", Grade: "C" },<br />
+                { Name: "Rahul", Marks: "801", Grade: "B" },<br />
+                { Name: "William", Marks: "740", Grade: "C" },<br />
+                { Name: "Raman", Marks: "880", Grade: "B" },<br />
+                { Name: "Raju", Marks: "990", Grade: "A" }];<br />
+                <br />
+                <strong>Table with sortable colurmns, click on the header field to sort.</strong>
+                <br /><br />
+                <table class="tblstudents">
+                    <thead>
+                        <tr>
+                            <th ng-click="sortlist('Name');" ng-class="{sortclass : sortorder=='Name' }">
+                                Name
+                            </th>
+                            <th ng-click="sortlist('Marks');" ng-class="{sortclass : sortorder=='Marks' }">
+                                Marks
+                            </th>
+                            <th ng-click="sortlist('Grade');" ng-class="{sortclass : sortorder=='Grade' }">
+                                Grade
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="student in studentlist | orderBy : sortorder">
+                            <td>
+                                {{ student.Name}}
+                            </td>
+                            <td>
+                                {{ student.Marks}}
+                            </td>
+                            <td>
+                                {{ student.Grade}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+        </ul>
+    </div>
+    <script>
+        var myapp = angular.module("SampleApp", []);
+        myapp.controller("SampleCntrl", function ($scope) {
+            $scope.intary = [10, 8, 6, 4, 9, 2];
+            $scope.studentlist = [
+            { Name: "James", Marks: "980", Grade: "A" },
+            { Name: "Steave", Marks: "863", Grade: "B" },
+            { Name: "Mark", Marks: "695", Grade: "D" },
+            { Name: "Smith", Marks: "776", Grade: "C" },
+            { Name: "Rahul", Marks: "801", Grade: "B" },
+            { Name: "William", Marks: "740", Grade: "C" },
+            { Name: "Raman", Marks: "880", Grade: "B" },
+            { Name: "Raju", Marks: "990", Grade: "A" }
+            ];
+            $scope.sortlist = function (order) {
+                $scope.sortorder = order;
+            };
+            $scope.sortlist('Name');
+        });
+    </script>
+</body>
+</html>

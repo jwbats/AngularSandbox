@@ -1,0 +1,32 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="" ng-init="A=5;B=6;">
+    <table>
+        <tr>
+            <td>
+                A:
+            </td>
+            <td>
+                <input type="text" ng-model="A" /><br />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                B:
+            </td>
+            <td>
+                <input type="text" ng-model="B" /><br />
+            </td>
+        </tr>
+    </table>
+    <br />
+    A: {{A}}<br />
+    B: {{B}}<br />
+    A * B: {{A * B}}<br />
+</div>
+</body>
+</html>

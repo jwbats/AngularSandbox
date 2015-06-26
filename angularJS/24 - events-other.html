@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+        .exmpul li
+        {
+            padding-bottom: 10px;
+        }
+        .exmpul span
+        {
+            padding: 5px;
+            display: block;
+            background: #ccc;
+            margin: 10px 10px 20px 10px;
+        }
+        .txtbg
+        {
+            background: blue;
+            color: #fff;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="SampleApp" ng-controller="SampleCntrl">
+        <ul>
+            <li>Focus event: <strong>ng-focus="expression"</strong>
+                <br />
+                Blur event: <strong>ng-blur="expression"</strong>
+                <br />
+                Place the cursor in the below textbox.<br />
+                <input type="text" ng-focus="focusbg=true" ng-blur="focusbg=false" ng-class="{txtbg:focusbg}" />
+                <br /><br />
+            </li>
+            <li>Copy event: <strong>ng-copy="expression"</strong>
+                <br />
+                <input type="text" ng-copy="copied=true" value="copy this text" />
+                <br />
+                Text copied : {{ copied }}
+                <br /><br />
+            </li>
+            <li>Paste event: <strong>ng-paste="expression"</strong>
+                <br />
+                <input type="text" ng-paste="pasted=true"  />
+                <br />
+                Text pasted : {{ pasted }}
+                <br /><br />
+            </li>
+            <li>Cut event: <strong>ng-cut="expression"</strong>
+                <br />
+                <input type="text" ng-cut="cut=true" value="cut this text" />
+                <br />
+                Text cut : {{ cut }}
+                <br /><br />
+            </li>
+        </ul>
+    </div>
+    <script>
+        var myapp = angular.module("SampleApp", []);
+        myapp.controller("SampleCntrl", function ($scope) {
+            $scope.copied = false;
+            $scope.pasted = false;
+            $scope.cut = false;
+        });
+    </script>
+</body>
+</html>

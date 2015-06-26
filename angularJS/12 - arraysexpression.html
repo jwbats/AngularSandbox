@@ -1,0 +1,50 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+        .exmpul span
+        {
+            padding: 5px;
+            display: block;
+            background: #ccc;
+            margin: 10px 10px 20px 10px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="SampleApp" ng-controller="SampleCntrl">
+        <strong>Array of integers : </strong>[10, 12, 36, 4, 51, 6, 8, 24];
+        <br />
+        <br />
+        <ul class="exmpul">
+            <li>To find array length we use the expression like <strong>{{ <em>intary.length</em>
+                }}</strong>
+                <br />
+                <span>Array length={{ intary.length }}</span> </li>
+            <li>To find array value based on index -> <strong>{{ <em>intary[aryindex]</em> }}</strong>
+                <br />
+                Enter array index :
+                <input type="text" ng-model="aryindex" />
+                <br />
+                <span>Array value based on index : {{ intary[aryindex] }}</span> </li>
+            <li>To sort the array in ascending order we use filter "orderBy" alogn with expression->
+                <strong>{{ <em>intary | orderBy:''</em> }}</strong>
+                <br />
+                <span>Array in ascending order : {{ intary | orderBy:'' }}</span> </li>
+            <li>To sort the array in descending order -> <strong>{{ <em>intary | orderBy:'' :true
+            </em>}}</strong>
+                <br />
+                <span>Array in descending order : {{ intary | orderBy:'' :true }}</span> </li>
+        </ul>
+    </div>
+    <script>
+        var myapp = angular.module("SampleApp", []);
+        myapp.controller("SampleCntrl", function ($scope) {
+            $scope.intary = [10, 12, 36, 4, 51, 6, 8, 24];
+            $scope.aryindex = 3;
+            $scope.Math = window.Math;
+        });
+    </script>
+</body>
+</html>

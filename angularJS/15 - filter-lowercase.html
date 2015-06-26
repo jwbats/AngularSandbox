@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="SampleApp" ng-controller="SampleCntrl">
+        Input string :
+        <input type="text" ng-model="inputstr" style="width:300px;" />
+        <br />
+        <p>Lowercase : {{ inputstr | lowercase }}</p>
+        <p>Uppercase : <span ng-bind="getUpperCase()"></span></p>
+    </div>
+    <script>
+        var myapp = angular.module("SampleApp", []);
+        myapp.controller("SampleCntrl", function ($scope) {
+            $scope.inputstr = "Welcome to Dotnet Learners";
+            $scope.getUpperCase = function(){
+                return this.inputstr.toUpperCase();
+            }
+        });
+    </script>
+</body>
+</html>

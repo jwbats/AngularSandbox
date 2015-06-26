@@ -1,0 +1,42 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="SampleApp" ng-controller="SampleCntrl">
+        <table>
+            <tr>
+                <td>
+                    A:
+                </td>
+                <td>
+                    <input type="text" ng-model="A" /><br />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    B:
+                </td>
+                <td>
+                    <input type="text" ng-model="B" /><br />
+                </td>
+            </tr>
+        </table>
+        <br />
+        Quantity : <span ng-bind="A"></span>
+        <br />
+        Unit Price : <span ng-bind="B"></span>
+        <br />
+        Total Price : <span ng-bind="A * B"></span>
+        <br />
+    </div>
+    <script>
+        var myapp = angular.module("SampleApp", []);
+        myapp.controller("SampleCntrl", function ($scope) {
+            $scope.A = 5;
+            $scope.B = 6;
+        });
+    </script>
+</body>
+</html>

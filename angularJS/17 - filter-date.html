@@ -1,0 +1,364 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+        .tblformat
+        {
+            border-collapse: collapse;
+            border: solid 1px #333;
+        }
+        .tblformat td, .tblformat th
+        {
+            border: solid 1px #333;
+            padding: 5px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="SampleApp" ng-controller="SampleCntrl">
+        Today :<span ng-bind="dt" style="font-weight: bold;"></span>
+        <table class="tblformat">
+            <thead>
+                <tr>
+                    <th>
+                        Format
+                    </th>
+                    <th>
+                        Filter
+                    </th>
+                    <th>
+                        Output
+                    </th>
+                </tr>
+            </thead>
+            <tr>
+                <td>
+                    Date (d)
+                </td>
+                <td>
+                    {{<em> dt | date:'d' </em>}}
+                </td>
+                <td>
+                    {{ dt | date:'d' }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Date (dd)
+                </td>
+                <td>
+                    {{<em> dt | date:'dd' </em>}}
+                </td>
+                <td>
+                    {{ dt | date:'dd' }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Month (M)
+                </td>
+                <td>
+                    {{<em> dt | date:'M' </em>}}
+                </td>
+                <td>
+                    {{ dt | date:'M' }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Month (MM)
+                </td>
+                <td>
+                    {{<em> dt | date:'MM' </em>}}
+                </td>
+                <td>
+                    {{ dt | date:'MM' }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Year (yy)
+                </td>
+                <td>
+                    {{<em> dt | date:'yy' </em>}}
+                </td>
+                <td>
+                    {{ dt | date:'yy' }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Year (yyyy)
+                </td>
+                <td>
+                    {{<em> dt | date:'yyyy' </em>}}
+                </td>
+                <td>
+                    {{ dt | date:'yyyy' }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Hours (12 hours)
+                </td>
+                <td>
+                    {{<em> dt | date:'h' </em>}}
+                </td>
+                <td>
+                    {{ dt | date:'h' }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Hours (12 hours)
+                </td>
+                <td>
+                    {{<em> dt | date:'hh' </em>}}
+                </td>
+                <td>
+                    {{ dt | date:'hh' }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Hours (24 hours)
+                </td>
+                <td>
+                    {{<em> dt | date:'H' </em>}}
+                </td>
+                <td>
+                    {{ dt | date:'H' }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Hours (24 hours)
+                </td>
+                <td>
+                    {{<em> dt | date:'HH' </em>}}
+                </td>
+                <td>
+                    {{ dt | date:'HH' }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Minutes (m)
+                </td>
+                <td>
+                    {{<em> dt | date:'m' </em>}}
+                </td>
+                <td>
+                    {{ dt | date:'m' }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Minutes (mm)
+                </td>
+                <td>
+                    {{<em> dt | date:'mm' </em>}}
+                </td>
+                <td>
+                    {{ dt | date:'mm' }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Seconds (s)
+                </td>
+                <td>
+                    {{<em> dt | date:'s' </em>}}
+                </td>
+                <td>
+                    {{ dt | date:'s' }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Seconds (ss)
+                </td>
+                <td>
+                    {{<em> dt | date:'ss' </em>}}
+                </td>
+                <td>
+                    {{ dt | date:'ss' }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Milli Seconds (sss)
+                </td>
+                <td>
+                    {{<em> dt | date:'sss' </em>}}
+                </td>
+                <td>
+                    {{ dt | date:'sss' }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    AM/PM (a)
+                </td>
+                <td>
+                    {{<em> dt | date:'a' </em>}}
+                </td>
+                <td>
+                    {{ dt | date:'a' }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    TimeZone (Z)
+                </td>
+                <td>
+                    {{<em> dt | date:'Z' </em>}}
+                </td>
+                <td>
+                    {{ dt | date:'Z' }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Day (EEE)
+                </td>
+                <td>
+                    {{<em> dt | date:'EEE' </em>}}
+                </td>
+                <td>
+                    {{ dt | date:'EEE' }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Day (EEEE)
+                </td>
+                <td>
+                    {{<em> dt | date:'EEEE' </em>}}
+                </td>
+                <td>
+                    {{ dt | date:'EEEE' }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Week of year (w)
+                </td>
+                <td>
+                    {{<em> dt | date:'w' </em>}}
+                </td>
+                <td>
+                    {{ dt | date:'w' }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Week of year (ww)
+                </td>
+                <td>
+                    {{<em> dt | date:'ww' </em>}}
+                </td>
+                <td>
+                    {{ dt | date:'ww' }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    shortTime
+                </td>
+                <td>
+                    {{<em> dt | date:'shortTime' </em>}}
+                </td>
+                <td>
+                    {{ dt | date:'shortTime' }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    mediumTime
+                </td>
+                <td>
+                    {{<em> dt | date:'mediumTime' </em>}}
+                </td>
+                <td>
+                    {{ dt | date:'mediumTime' }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    shortDate
+                </td>
+                <td>
+                    {{<em> dt | date:'shortDate' </em>}}
+                </td>
+                <td>
+                    {{ dt | date:'shortDate' }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    mediumDate
+                </td>
+                <td>
+                    {{<em> dt | date:'mediumDate' </em>}}
+                </td>
+                <td>
+                    {{ dt | date:'mediumDate' }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    longDate
+                </td>
+                <td>
+                    {{<em> dt | date:'longDate' </em>}}
+                </td>
+                <td>
+                    {{ dt | date:'longDate' }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    fullDate
+                </td>
+                <td>
+                    {{<em> dt | date:'fullDate' </em>}}
+                </td>
+                <td>
+                    {{ dt | date:'fullDate' }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    short
+                </td>
+                <td>
+                    {{<em> dt | date:'short' </em>}}
+                </td>
+                <td>
+                    {{ dt | date:'short' }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    medium
+                </td>
+                <td>
+                    {{<em> dt | date:'medium' </em>}}
+                </td>
+                <td>
+                    {{ dt | date:'medium' }}
+                </td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        var myapp = angular.module("SampleApp", []);
+        myapp.controller("SampleCntrl", function ($scope) {
+            $scope.dt = new Date();
+        });
+    </script>
+</body>
+</html>

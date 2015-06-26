@@ -1,0 +1,29 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="SampleApp" ng-controller="SampleCntrl">
+    <input id="chbshow" type="checkbox" ng-model="showpara" /><label for="chbshow">Show
+        Paragraph</label>
+    <p ng-show="showpara" style="background: green; color: #fff; font-size: 14px; font-weight: bold;
+        padding: 10px;">
+        You can hide or show this paragraph using ng-show</p>
+    <br />
+    <br />
+    <input id="chbhide" type="checkbox" ng-model="hidepara" /><label for="chbhide">Hide
+        Paragraph</label>
+    <p ng-hide="hidepara" style="background: blue; color: #fff; font-size: 14px; font-weight: bold;
+        padding: 10px;">
+        You can hide or show this paragraph using ng-hide</p>
+</div>
+<script>
+    var myapp = angular.module("SampleApp", []);
+    myapp.controller("SampleCntrl", function ($scope) {
+        $scope.showpara = true;
+        $scope.hidepara = false;
+    });
+</script>
+</body>
+</html>
