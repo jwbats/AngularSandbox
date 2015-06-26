@@ -66,9 +66,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="index.html" />
-    <Content Include="js\app.js" />
+    <Content Include="js\App.js" />
     <Content Include="js\controllers\math.js" />
-    <Content Include="js\directives\persons.js" />
+    <Content Include="js\controllers\personListing.js" />
+    <Content Include="js\directives\personListing.js" />
     <Content Include="js\controllers\string.js" />
     <Content Include="personListing.html" />
     <Content Include="Web.config" />
