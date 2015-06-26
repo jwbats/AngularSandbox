@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "angularJS", "angularJS\", "{83A9ED9E-2E23-4129-80EE-DD6638074097}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
@@ -19,16 +21,26 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "angularJS", "angularJS\", "
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "55727"
+		SlnRelativePath = "angularJS\"
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox", "Sandbox\Sandbox.csproj", "{753C5ECA-90DE-4BA1-BD72-A0108F484C25}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{83A9ED9E-2E23-4129-80EE-DD6638074097}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{83A9ED9E-2E23-4129-80EE-DD6638074097}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83A9ED9E-2E23-4129-80EE-DD6638074097}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{83A9ED9E-2E23-4129-80EE-DD6638074097}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{753C5ECA-90DE-4BA1-BD72-A0108F484C25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{753C5ECA-90DE-4BA1-BD72-A0108F484C25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{753C5ECA-90DE-4BA1-BD72-A0108F484C25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{753C5ECA-90DE-4BA1-BD72-A0108F484C25}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

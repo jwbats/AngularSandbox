@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html ng-app="SandboxApp">
+<head>
+	<title>Angular Sandbox</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/controllers/math.js"></script>
+	<script src="js/controllers/string.js"></script>
+	<script src="js/controllers/personListing.js"></script>
+	<script src="js/directives/personListing.js"></script>
+</head>
+<body>
+
+	<div ng-controller="MathCntrl">
+		<span>A:</span><input ng-model="A" /><br />
+		<span>B:</span><input ng-model="B" /><br />
+		<span>Mul:</span><span ng-bind="mul()"></span><br/>
+		<span>Div:</span><span ng-bind="div()"></span><br />
+		<span>Add:</span><span ng-bind="add()"></span><br />
+		<span>Sub:</span><span ng-bind="sub()"></span><br />
+	</div>
+
+	<hr/>
+	
+	<div ng-controller="StringCntrl">
+		<span>String:</span><input ng-model="str" /><br />
+		<span>Upper:</span><span ng-bind="toUpper()"></span><br />
+		<span>Lower:</span><span ng-bind="toLower()"></span><br />
+	</div>
+
+	<hr/>
+
+	<person-listing></person-listing>
+
+</body>
+</html>
