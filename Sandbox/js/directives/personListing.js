@@ -3,7 +3,7 @@
 	angular.module("person-directives", []).directive("personListing", function(){
 		return {
 			restrict: "E",
-			templateUrl: "../personListing.html",
+			templateUrl: "../html/personListing.html",
 			scope: {},
 			controller: "PersonListingCntrl"
 		};	
