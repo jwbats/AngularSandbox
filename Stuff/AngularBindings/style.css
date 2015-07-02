@@ -4,11 +4,11 @@ div.container {
     padding:10px;
 }
 
-#inner {
+#inputList {
     display:table;
 }
 
-#inner label {
+#inputList label {
     clear:both;
     float:left;
     font-weight:bolder;
@@ -16,7 +16,7 @@ div.container {
     text-align:right;
     margin-right:5px;
 }
-#inner input {
+#inputList input {
     clear:right;
     float:left;
 }

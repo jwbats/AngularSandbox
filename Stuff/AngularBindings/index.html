@@ -1,42 +1,34 @@
 <html ng-app="isolate">
-	<head>
-		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
-		<script type="text/javascript" src="script.js"></script>
-		<link rel="stylesheet" type="text/css" href="style.css" />
-	</head>
-	
-	<body>
-	
+<head>
+	<title>Angular Bindings</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+
 	<div class="container">
 
-		<h3>Outer Scope</h3>
-		<input type="text" ng-model="myModel" />
-		<p>msg: {{ msg }}</p>
-		
-		<hr/>
+		<div class="container">
 
-		<h3>Inner Scope</h3>
-		<div id="inner">
-			<div my-directive at="{{ myModel }}" equals="myModel" ampersand="msg = msg + ' click' "></div>
+			<h3>Parent Scope</h3>
+			<input type="text" ng-model="stringValue" />
+			<p>Directive message: {{ dMsg }}</p>
+
+		</div>
+
+		<div class="container">
+
+			<h3>Isolated Scope</h3>
+			<div id="inputList">
+				<jays-directive at2="{{ stringValue }}" equals2="stringValue" ampersand2="dMsg = dMsg + ' click'"></jays-directive>
+			</div>
+
 		</div>
 
 	</div>
 
-	<div class="container">
-
-		<h3>Some Scope...</h3>
-		<input type="text" ng-model="stringValue" />
-		<p>Directive message: {{ dMsg }}</p>
-
-		<hr/>        
-
-		<h3>Yet Another Scope...</h3>
-		<div id="inner">
-			<div jays-directive at2="{{ stringValue }}" equals2="stringValue" ampersand2="dMsg = dMsg + ' click'"></div>
-		</div>
-
-	</div>
-	
-	</body>
+</body>
 </html>
 

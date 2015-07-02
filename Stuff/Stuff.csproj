@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AngularBindings\index.html" />
+    <Content Include="AngularBindings\inputs.html" />
     <Content Include="AngularBindings\script.js" />
     <Content Include="AngularBindings\style.css" />
     <Content Include="AngularDirectives\index.html" />
