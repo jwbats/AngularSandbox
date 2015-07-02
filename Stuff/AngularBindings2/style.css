@@ -1,0 +1,22 @@
+div.container {
+    border:1px solid black;
+    margin-top:10px;
+    padding:10px;
+}
+
+#inputList {
+    display:table;
+}
+
+#inputList label {
+    clear:both;
+    float:left;
+    font-weight:bolder;
+    width:45px;
+    text-align:right;
+    margin-right:5px;
+}
+#inputList input {
+    clear:right;
+    float:left;
+}

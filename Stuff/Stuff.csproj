@@ -65,6 +65,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AngularBindings2\index.html" />
+    <Content Include="AngularBindings2\inputs.html" />
+    <Content Include="AngularBindings2\script.js" />
+    <Content Include="AngularBindings2\style.css" />
     <Content Include="AngularBindings\index.html" />
     <Content Include="AngularBindings\inputs.html" />
     <Content Include="AngularBindings\script.js" />

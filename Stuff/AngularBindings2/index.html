@@ -14,7 +14,7 @@
 
 			<h3>Parent Scope</h3>
 			<input type="text" ng-model="stringValue" />
-			<p>Directive message: {{ dMsg }}</p>
+			<i>// Update to see how parent scope interacts with component scope</i>
 
 		</div>
 
@@ -22,7 +22,7 @@
 
 			<h3>Isolated Scope</h3>
 			<div id="inputList">
-				<jays-directive at2="{{stringValue}}" equals2="stringValue" ampersand2="dMsg = dMsg + ' click'"></jays-directive>
+				<jays-directive blah="{{stringValue}}" equals2="stringValue"></jays-directive>
 			</div>
 
 		</div>
